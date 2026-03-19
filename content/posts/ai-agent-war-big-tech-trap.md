@@ -111,7 +111,51 @@ Cursor 的处境稍好，因为代码场景的工作流更深、IDE 本身是重
 
 ---
 
-## 六、几个判断
+## 六、被低估的变量
+
+上面的分析有一个危险：它可能太自洽了。任何看起来逻辑完整的框架，都值得主动寻找它的盲区。以下是几个可能动摇前述判断的变量。
+
+### 开源模型的搅局能力
+
+前面的分析几乎没有提到 Llama、Qwen、Mistral 这条线。这是一个重大遗漏。
+
+如果开源模型在 agent 场景的能力追到闭源的 80-90%（目前大概 60-70%），"模型公司有结构性优势"的逻辑会被显著动摇。因为任何团队都可以基于开源模型 + 自己的业务数据做 RL 微调，应用层创业公司的成本劣势会大幅缩小——你不再需要为每次 API 调用付费给 OpenAI 或 Anthropic。
+
+Meta 投入巨资做 Llama 的战略意图正是如此：**把模型层变成公共基础设施，让价值回到应用层。** 如果 Llama 4 在 agent 场景表现足够好，前面"创业公司账本算不过来"这个判断可能需要大幅修正。这是整篇文章最大的摆动因素。
+
+### 企业市场的不同节奏
+
+12-18 个月锁定用户心智，这对个人用户市场可能成立。但企业市场完全是另一个时间尺度。
+
+企业采购有安全审核、合规评估、定制化部署、预算周期——这些流程本身就需要 6-12 个月。Salesforce、ServiceNow、微软这类公司的 agent 产品虽然不性感，但可能在企业市场闷声赚大钱。企业市场的战争窗口更可能是 3-5 年，而且壁垒一旦建立，比 C 端深得多。
+
+这意味着：即使 C 端格局在 2027 年基本锁定，B 端的竞争才刚刚开始。对创业公司来说，B 端垂直场景可能是比 C 端更现实的机会。
+
+### 监管黑天鹅
+
+欧盟 AI Act 正在落地，中国的 AI 管理办法持续收紧。如果某个主要市场突然对 agent 的自主操作能力加限制——比如要求所有 agent 行为必须经过人类确认——整个赛道的节奏会被打断。
+
+这不是大概率事件，但一旦发生影响是非线性的。它可能同时冻结所有玩家的进度条，反而给慢玩家留出追赶时间。
+
+### 工作流锁定可能没那么深
+
+"赢家是工作流锁定最深的"——这个判断的前提是工作流粘性真的能建立起来。但现实是：目前所有 agent 产品的工作流都还很浅。Claude 的 memory/skills/hooks 看着复杂，大部分用户的使用深度可能就是聊天 + 偶尔写代码。
+
+真正深度的工作流锁定（像 Notion 或 Salesforce 那种程度），需要 2-3 年的生态积累，不是 12 个月能完成的。这意味着窗口可能比我估计的更长——因为还没有谁真正建立起不可迁移的工作流壁垒。
+
+### 多模态可能重新洗牌
+
+前面的分析基本基于文本和代码 agent 的视角。但如果语音交互（GPT-4o 级别的实时语音）或视觉理解（屏幕理解 + GUI 操作）成为 agent 的主要入口，竞争格局可能被重新定义。
+
+Google 在多模态上的积累——从 Gemini 的原生多模态架构到 Android 的设备级视觉控制——可能让它在下半场后来居上。这在前面的分析里几乎没有出现，但它可能是决定终局最重要的技术变量之一。
+
+### 大厂最大的危险可能不是组织问题
+
+补充一个之前没有充分展开的点：大厂最致命的风险可能不是组织架构本身，而是**人才流失的恶性循环**。最有能力的年轻人看到组织问题后选择离开，留下来的人更加保守，决策质量进一步下降，更多优秀的人离开。这个循环一旦启动，比组织架构问题本身更难逆转。
+
+---
+
+## 七、几个判断
 
 以下是基于上述分析的几个判断，它们可能是错的，但我认为值得认真思考：
 
@@ -216,7 +260,51 @@ Cursor is somewhat safer — code workflows run deeper, the IDE itself is a heav
 
 ---
 
-## 6. Several Propositions
+## 6. Underestimated Variables
+
+The analysis above has a danger: it may be too internally consistent. Any framework that looks logically complete deserves active stress-testing. Here are several variables that could undermine the preceding arguments.
+
+### Open-Source Models as Disruptors
+
+The analysis above barely mentions Llama, Qwen, or Mistral. This is a significant blind spot.
+
+If open-source models reach 80-90% of closed-source capability in agent scenarios (currently around 60-70%), the "model companies have structural advantages" thesis weakens significantly. Any team could fine-tune open-source models with their own business data via RL — dramatically reducing application-layer startups' cost disadvantage since they'd no longer need to pay per API call to OpenAI or Anthropic.
+
+Meta's massive investment in Llama has precisely this strategic intent: **turn the model layer into public infrastructure, pushing value back to the application layer.** If Llama 4 performs well enough for agent scenarios, the "startup economics don't work" argument may need substantial revision. This is the single largest swing factor in this entire analysis.
+
+### Enterprise Markets Move on Different Timescales
+
+The 12-18 month mindshare lock-in estimate may hold for consumer markets. But enterprise is an entirely different tempo.
+
+Enterprise procurement involves security audits, compliance reviews, custom deployments, and budget cycles — processes that inherently take 6-12 months. Salesforce, ServiceNow, and Microsoft's agent products may not be exciting, but they could quietly dominate enterprise. The enterprise war window is more likely 3-5 years, and once moats are built, they run far deeper than consumer.
+
+This means: even if the consumer landscape largely locks by 2027, the enterprise competition is just beginning. For startups, vertical enterprise scenarios may offer more realistic opportunities than consumer plays.
+
+### Regulatory Black Swans
+
+The EU AI Act is being implemented. China's AI regulations continue tightening. If a major market suddenly restricts agent autonomous operation capabilities — say, requiring human confirmation for all agent actions — the entire sector's pace could be disrupted.
+
+This isn't a high-probability event, but its impact would be nonlinear. It could simultaneously freeze every player's progress bar, paradoxically giving slower players time to catch up.
+
+### Workflow Lock-In May Not Run Deep Enough
+
+"The winner will have the deepest workflow lock-in" — this assumes workflow stickiness can actually be established. But reality check: all current agent products have quite shallow workflows. Claude's memory/skills/hooks system looks complex, but most users' actual usage depth is probably just chatting + occasional code writing.
+
+Truly deep workflow lock-in (Notion or Salesforce levels) requires 2-3 years of ecosystem accumulation — not achievable in 12 months. This means the window might be longer than estimated, because nobody has yet built truly non-portable workflow moats.
+
+### Multimodality Could Reshuffle the Deck
+
+The preceding analysis is essentially from a text/code agent perspective. But if voice interaction (GPT-4o-level real-time voice) or visual understanding (screen comprehension + GUI operation) becomes the primary agent interface, the competitive landscape could be fundamentally redefined.
+
+Google's multimodal accumulated advantages — from Gemini's native multimodal architecture to Android's device-level visual control — could enable a second-half comeback. This barely appears in the earlier analysis but may be one of the most decisive technical variables in determining the endgame.
+
+### Big Tech's Greatest Danger May Not Be Organizational
+
+One point that deserves fuller treatment: big tech's most lethal risk may not be organizational architecture itself, but the **vicious cycle of talent drain**. The most capable young people see organizational dysfunction and leave. Those who remain become more conservative. Decision quality declines further. More talented people leave. Once this cycle starts, it's harder to reverse than the structural org problems themselves.
+
+---
+
+## 7. Several Propositions
 
 Based on the above analysis, here are several propositions. They may be wrong, but I believe they deserve serious consideration:
 
