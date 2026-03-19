@@ -10,7 +10,21 @@ cover:
   hidden: true
 ---
 
-# AI Agent 战争：大厂的组织陷阱、创业公司的成本困局与模型公司的终局优势
+<style>
+.lang-toggle{display:flex;gap:8px;margin-bottom:1.5em}
+.lang-btn{padding:6px 16px;border:1px solid #888;border-radius:4px;cursor:pointer;background:transparent;font-size:14px;transition:all .2s}
+.lang-btn.active{background:#333;color:#fff;border-color:#333}
+.dark .lang-btn.active{background:#ddd;color:#111;border-color:#ddd}
+.lang-section{display:none}
+.lang-section.active{display:block}
+</style>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+  <button class="lang-btn" onclick="switchLang('en')">English</button>
+</div>
+
+<div id="lang-zh" class="lang-section active">
 
 > 一个收入 5000 块的人，是否愿意为 agent 帮他点一顿饭付费 2 元，还是会为 agent 帮他整理客户名单付费 5 元？
 
@@ -20,143 +34,138 @@ cover:
 
 ## 一、大厂的组织架构正在成为最大的负债
 
-### 人才断层：不存在的"全栈 Agent 人才"
+大厂过去十年的组织模式，培养了三类人：做产品的、做数据的、训模型的。他们各自精通，但几乎没有人同时具备**模型训练视角**（知道什么数据能让模型在特定场景下表现更好）、**数据策略视角**（知道怎么从业务场景中提炼高质量训练信号）、**Agent 产品构建视角**（知道用户的工作流长什么样，harness 该怎么设计）。
 
-大厂过去十年的组织模式，培养了三类人：做产品的、做数据的、训模型的。他们各自精通，但几乎没有人同时具备：
+豆包、元宝、通义千问——它们的组织架构都是产品线、数据线、模型线分得干干净净。但 Agent 时代需要的不是拼凑三条线的产出，而是一个人（或极小团队）**同时看到三层，做出一体化判断**。
 
-- **模型训练视角**：知道什么数据能让模型在特定场景下表现更好
-- **数据策略视角**：知道怎么从业务场景中提炼高质量训练信号
-- **Agent 产品构建视角**：知道用户的工作流长什么样，harness 该怎么设计
+更致命的是中高层的认知锁死。他们理解 DAU、留存、广告变现，但 Agent 产品的逻辑完全不同：
 
-豆包、元宝、通义千问——它们的组织架构都是产品线、数据线、模型线分得干干净净。在传统互联网时代，这很合理。但 Agent 时代需要的不是把三条线的产出拼在一起，而是需要一个人（或一个极小团队）同时看到三层，做出**一体化的判断**。
+- **旧逻辑**：掌握分发渠道 → 喂内容 → 留用户 → 卖广告
+- **新逻辑**：构建 solid harness → 适配模型能力 → 留住工作流 → 从生产力提升中收费
 
-### 中高层的认知锁死
+少数有视野的年轻人要花大量精力**向上说服**而非向下执行。一个错误决策消耗半年，外面的模型公司已经迭代三轮。
 
-更致命的是：大厂的中高层，绝大多数不懂模型。
-
-他们理解 DAU、留存、转化漏斗、广告变现——这些是上一个时代的核心能力。但 Agent 产品的逻辑完全不同：
-
-**旧逻辑**：掌握分发渠道 → 给用户喂内容 → 让用户留下来 → 卖广告
-
-**新逻辑**：构建 solid harness → 适配模型能力 → 留住用户的工作流 → 从生产力提升中收费
-
-这两套逻辑之间，隔着一个认知鸿沟。中高层不懂，意味着少数有视野的年轻人要花大量精力去**向上说服**——而不是向下执行。在大厂，说服的成本极高，试错的代价更高。一个错误决策可能消耗半年时间，而这半年，外面的模型公司已经迭代了三轮。
-
-### Agent 功能进化的"一体化"本质
-
-大厂根本不知道一个 Agent 功能进化的完整流程是什么样的。
-
-以 Claude Code 为例，它的进化路径大致是：
-
-1. **观察用户工作流** → 发现高频、高价值的操作模式
-2. **设计 harness 抽象** → 把工作流固化为可复用的 skill/hook/agent
-3. **收集执行数据** → 用户的实际使用产生高质量训练信号
-4. **模型针对性优化** → 用业务数据做 benchmark，RL 强化特定场景能力
-5. **回到产品层验证** → 更强的模型能力解锁新的产品形态
-
-这是一个**闭环**。产品、数据、模型是同一个飞轮的三个齿轮，任何一个齿轮独立转动都没有意义。而大厂把三个齿轮放在三个部门，中间隔着汇报线、KPI 墙和信息壁垒。
+以 Claude Code 为例，Agent 的进化是一个闭环：观察用户工作流 → 设计 harness 抽象 → 收集执行数据 → 模型针对性优化 → 回到产品层验证。产品、数据、模型是同一个飞轮的三个齿轮。大厂把三个齿轮放在三个部门，中间隔着汇报线、KPI 墙和信息壁垒。
 
 ---
 
 ## 二、应用层创业公司的成本困局
 
-### 账本算不过来
+一个残酷的算术题——模型公司只需支付推理和支付通道成本，而独立创业公司还要额外支付模型调用费用，这是**永远无法消除的成本劣势**。更深层的问题：没有自己的业务数据做 benchmark，无法通过 RL 强化高价值场景能力，你永远只是模型公司能力边界内的搬运工。
 
-一个残酷的算术题：
+Manus 卖身 Meta，就是这个逻辑的验证。一直用 Claude 的模型，你能做出好产品，但**挣不了钱**——因为 Claude 自己可以做同样的事，成本更低。
 
-| 成本项 | 模型公司 | 应用层创业公司 |
-|--------|----------|----------------|
-| 推理成本 | ✅ 自己承担 | ✅ 自己承担 |
-| 模型层成本 | ❌ 不需要（自有模型） | ✅ 需要额外支付 |
-| 支付/卡成本 | ✅ 自己承担 | ✅ 自己承担 |
-| 数据飞轮 | ✅ 业务数据直接反哺模型 | ❌ 数据留在别人的模型里 |
-
-模型公司（OpenAI、Claude、Kimi、DeepSeek、MiniMax）只需要支付推理和支付通道的成本。而独立创业公司还要额外支付给模型公司的调用费用——这是一层**永远无法消除的成本劣势**。
-
-Manus 卖身 Meta，本质上就是这个逻辑的验证。
-
-### 没有数据飞轮 = 没有护城河
-
-更深层的问题：如果你不能用自己的业务数据做 benchmark，不能通过 RL 强化 agent 在高价值场景的能力，不能提高每个 token 的质量——那你永远只是在模型公司的能力边界内做搬运工。
-
-一直用 Claude 的模型，你可以做出好产品，但你**挣不了钱**。因为 Claude 自己可以做同样的事，而且成本更低。
-
-### 唯一的出路：出海 × 幸运
-
-应用层创业公司如果想活下来，需要同时满足：
-
-1. **出海**：海外市场付费意愿更强，客单价更高
-2. **幸运**：赶上一个模型公司暂时不会亲自下场的垂直场景
-3. **速度**：在模型公司反应过来之前，建立起足够的用户心智和切换成本
-
-这三个条件同时满足的概率，极低。
+应用层创业公司的出路需要同时满足：**出海**（海外客单价高）、**幸运**（赶上模型公司暂不下场的垂直场景）、**速度**（在模型公司反应前建立切换成本）。三者同时满足的概率极低。
 
 ---
 
 ## 三、分发渠道没有想象中重要
 
-### 生产力工具 >> 生活提效
-
 一个反直觉的判断：**微信生态、阿里生态的分发优势，在 Agent 时代可能没那么重要。**
 
-为什么？因为 Agent 的核心价值在**生产力**，不在生活便利。
+Agent 的核心价值在**生产力**，不在生活便利。一个人花 1 小时在美团上选餐厅——他真的需要 AI 压缩到 5 分钟吗？点餐本身就是消遣。但如果 agent 能帮他整理客户名单、完成周报、把 3 小时文档工作压缩到 20 分钟——**他会付费**，因为这直接等于多赚了 2.5 小时工资。
 
-想想看：一个人花 1 小时在美团上反复看评价、比价、选餐厅——他真的需要 AI 帮他把这个过程压缩到 5 分钟吗？对很多人来说，点餐本身就是一种消遣。
+Claude Code 是一个惊人的产品。它的"问题"是门槛高。但换个角度：**如果 agent 真的能帮你完成 2 小时的工作，你会介意花 2 分钟打开某个 APP 远程操控吗？**
 
-但如果一个 agent 能帮他：
-- 整理客户名单并生成跟进策略
-- 自动完成周报和数据分析
-- 把 3 小时的文档工作压缩到 20 分钟
-
-**他会为此付费**。因为这直接等于他多赚了 2.5 小时的工资。
-
-所以问题回到开头：收入 5000 块的人，2 元的点餐 agent vs 5 元的客户管理 agent——答案显而易见。
-
-### Claude Code 的启示：门槛高不是 bug，是 feature
-
-Claude 推出的 Claude Code（以及即将到来的 cowork 模式）是一个惊人的产品。它的"问题"是门槛高——对低级用户不友好。
-
-但换个角度想：**如果一个 agent 真的可以帮你完成一份原本需要 2 小时的工作，你会介意花 2 分钟打开某个 APP 远程操控它吗？**
-
-答案是不会。真正的生产力工具不需要分发渠道的加持。用户会主动找到它，就像程序员会主动找到 GitHub、设计师会主动找到 Figma。
-
-分发渠道解决的是"让用户发现你"的问题。但当产品本身就是**不可替代的生产力**时，用户会自己来找你。
+真正的生产力工具不需要分发渠道加持。用户会主动找到它，就像程序员找 GitHub、设计师找 Figma。
 
 ---
 
-## 四、Token 价格可能上涨：基础设施的硬约束
+## 四、Token 价格可能上涨
 
-一个被低估的风险：**token 价格未必会持续下降，甚至可能上涨。**
+一个被低估的风险：基础设施供给跟不上需求。电力短缺、芯片产能紧张（H200/B200 交付以季度计）、GPU 实例价格未降、存储需求指数增长——这些硬约束正在**拉平**模型应用的增长曲线。
 
-原因很简单——基础设施的供给跟不上需求：
-
-- **电力短缺**：全球数据中心的电力需求在 2026 年已经开始出现瓶颈
-- **芯片供应**：NVIDIA 的产能依然紧张，H200/B200 的交付周期以季度计
-- **云服务成本**：AWS、Azure、GCP 的 GPU 实例价格并没有显著下降
-- **存储压力**：模型规模和上下文窗口的增长，对存储的需求呈指数级增长
-
-这些硬约束意味着：模型应用的增长曲线正在被基础设施的供给曲线**拉平**。如果 token 价格上涨，时间窗口会进一步收紧——留给应用层创业公司的空间会更小，而拥有自研模型和优化能力的公司优势会更大。
+Token 价格上涨意味着时间窗口进一步收紧，留给应用层创业公司的空间更小，拥有自研模型和优化能力的公司优势更大。
 
 ---
 
-## 五、结论：四个判断
+## 五、四个判断
 
-**判断一：OpenClaw 的创业机会属于具备应用能力的模型公司**
+**一、OpenClaw 的机会属于具备应用能力的模型公司。** Google、Claude、OpenAI、Kimi、DeepSeek、MiniMax、豆包——同时拥有模型能力和应用构建能力的公司，才是真正的 Agent 战争玩家。
 
-Google、Claude、OpenAI、Kimi、DeepSeek、MiniMax、豆包——这些同时拥有模型能力和应用构建能力的公司，才是真正的 Agent 战争玩家。纯应用层公司会逐渐被挤压到边缘。
+**二、复合型人才是最稀缺的资源。** 同时具备模型训练、数据策略、用户心智理解力的人是关键变量。他们需要知道最重要的工作流在模型层面该如何优化。这种人才几乎只能在年轻一代中产生。
 
-**判断二：复合型人才是最稀缺的资源**
+**三、大厂比自己想象中更危险。** 模型进化和组织人才进化同时发生。跨部门、跨层级的组织设计在 Agent 时代变得极其愚蠢。生态的价值取决于用户愿意为什么付费，而不是你有多少用户。
 
-同时具备模型训练能力、数据策略能力、用户心智理解力的人，会成为这场战争中最关键的变量。他们需要知道最重要的工作流（网页操作、Office 办公、复杂检索）在模型层面该如何优化。这种人才几乎只能在年轻一代中产生——因为老一代的认知框架已经固化。
-
-**判断三：大厂比自己想象中更危险**
-
-模型在进化，组织人才也在进化——这两件事在同时发生。大厂的跨部门、跨层级的组织架构设计在 Agent 时代变得极其愚蠢。信息壁垒和信任壁垒叠加，导致决策速度远远跟不上模型能力的迭代速度。所谓的"生态优势"需要重新审视：生态的价值取决于用户愿意为什么付费，而不是你有多少用户。
-
-**判断四：时间窗口正在收紧**
-
-基础设施的硬约束（电力、芯片、云、存储）正在拉平模型应用的增长曲线。如果 token 价格上涨，所有玩家的试错空间都会缩小。越早建立起数据飞轮和用户工作流粘性的公司，越有可能在窗口关闭前站稳。
+**四、时间窗口正在收紧。** 基础设施硬约束正在拉平增长曲线。越早建立数据飞轮和工作流粘性的公司，越有可能在窗口关闭前站稳。
 
 ---
 
-*写于 2026 年 3 月 19 日。这是一个大厂组织架构的惯性、创业公司的成本结构、模型公司的闭环优势三股力量交汇的时刻。最终胜出的，不是拥有最多用户的公司，而是拥有最深工作流理解和最强模型闭环能力的公司。*
+*写于 2026 年 3 月 19 日*
+
+</div>
+
+<div id="lang-en" class="lang-section">
+
+> Would a person earning ¥5,000/month pay ¥2 for an agent that orders food, or ¥5 for one that organizes their client list?
+
+The answer to this question determines the endgame of the AI Agent war.
+
+---
+
+## 1. Big Tech's Organizational Architecture Is Becoming Its Biggest Liability
+
+Over the past decade, big tech companies cultivated three types of talent: product people, data people, and model people. Each excels in their domain, but almost no one possesses all three perspectives simultaneously — **model training** (knowing what data improves model performance in specific scenarios), **data strategy** (extracting high-quality training signals from business contexts), and **agent product building** (understanding user workflows and how to design the harness).
+
+Douyin/ByteDance, Tencent's Yuanbao, Alibaba's Tongyi Qwen — their org charts split product, data, and model lines cleanly apart. But the Agent era doesn't need outputs from three lines stitched together. It needs one person (or a tiny team) **seeing all three layers at once, making integrated decisions**.
+
+Worse, senior management's cognition is locked in. They understand DAU, retention, ad monetization — last era's core competencies. But Agent products follow entirely different logic:
+
+- **Old logic**: Control distribution → Feed content → Retain users → Sell ads
+- **New logic**: Build solid harness → Adapt model capabilities → Retain workflows → Charge for productivity gains
+
+The few young people with this vision spend their energy **persuading upward** instead of executing downward. One bad decision burns six months — while model companies outside have iterated three times.
+
+Using Claude Code as an example, Agent evolution is a closed loop: observe user workflows → design harness abstractions → collect execution data → optimize models for specific scenarios → validate at the product layer. Product, data, and model are three gears of the same flywheel. Big tech puts them in three departments, separated by reporting lines, KPI walls, and information silos.
+
+---
+
+## 2. Application-Layer Startups Can't Make the Math Work
+
+A brutal arithmetic problem — model companies only pay for inference and payment processing costs. Independent startups must additionally pay model API fees — a **permanently insurmountable cost disadvantage**. Deeper still: without your own business data for benchmarks, unable to RL-optimize for high-value scenarios, you're forever a porter within model companies' capability boundaries.
+
+Manus selling to Meta validates this logic. Using Claude's models, you can build good products, but you **can't make money** — because Claude can do the same thing at lower cost.
+
+Application-layer startups need all three simultaneously: **going global** (higher willingness to pay overseas), **luck** (finding a vertical where model companies won't compete directly), and **speed** (building switching costs before model companies react). The probability of all three? Extremely low.
+
+---
+
+## 3. Distribution Channels Are Overrated
+
+A counter-intuitive take: **WeChat's ecosystem, Alibaba's ecosystem — their distribution advantages may not matter much in the Agent era.**
+
+Agent's core value lies in **productivity**, not lifestyle convenience. Someone spending an hour browsing restaurant reviews on Meituan — do they really need AI to compress that to 5 minutes? Browsing is entertainment. But if an agent can organize their client list, automate weekly reports, compress 3 hours of document work to 20 minutes — **they'll pay**, because it directly equals 2.5 extra hours of wages.
+
+Claude Code is a remarkable product. Its "problem" is a high barrier to entry. But flip it: **if an agent can genuinely complete 2 hours of your work, would you mind spending 2 minutes opening an app to control it remotely?**
+
+Real productivity tools don't need distribution channel support. Users will find them on their own, just as developers find GitHub and designers find Figma.
+
+---
+
+## 4. Token Prices May Rise
+
+An underestimated risk: infrastructure supply can't keep up with demand. Power shortages, tight chip capacity (H200/B200 deliveries measured in quarters), GPU instance prices not declining, exponentially growing storage needs — these hard constraints are **flattening** the growth curve of model applications.
+
+Rising token prices mean tightening time windows, less room for application-layer startups, and greater advantages for companies with in-house models and optimization capabilities.
+
+---
+
+## 5. Four Conclusions
+
+**One: The OpenClaw opportunity belongs to model companies with application capabilities.** Google, Anthropic, OpenAI, Kimi, DeepSeek, MiniMax, Doubao — companies with both model and application-building capabilities are the real Agent war players.
+
+**Two: Compound talent is the scarcest resource.** People with model training, data strategy, AND user psychology understanding are the key variable. They need to know how to optimize the most important workflows at the model level. This talent almost exclusively comes from the younger generation.
+
+**Three: Big tech is more vulnerable than it thinks.** Model evolution and organizational talent evolution are happening simultaneously. Cross-department, cross-hierarchy org designs are becoming extremely foolish in the Agent era. An ecosystem's value depends on what users will pay for, not how many users you have.
+
+**Four: The time window is closing.** Infrastructure constraints are flattening the growth curve. Companies that build data flywheels and workflow stickiness earliest will be most likely to hold ground before the window shuts.
+
+---
+
+*Written March 19, 2026*
+
+</div>
+
+<script>
+function switchLang(lang){document.querySelectorAll('.lang-section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.getElementById('lang-'+lang).classList.add('active');document.querySelector('[onclick="switchLang(\''+lang+'\')"]').classList.add('active')}
+</script>
