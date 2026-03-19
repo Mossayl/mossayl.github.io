@@ -1,0 +1,58 @@
+baseURL: https://mossayl.github.io/
+title: Mossayl's Blog
+theme: PaperMod
+paginate: 10
+
+defaultContentLanguage: en
+
+params:
+  env: production
+  author: Mossayl
+  description: "AI, Technology, and Investing"
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  homeInfoParams:
+    Title: "Hi, I'm Mossayl"
+    Content: "Writing about AI, token economics, and building the future."
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/Mossayl"
+    - name: twitter
+      url: "https://twitter.com/mossayl"
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 30
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
