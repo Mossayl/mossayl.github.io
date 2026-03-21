@@ -1,7 +1,7 @@
 ---
 title: "Token Economics: Reverse-Engineering AI Company Valuations from Jensen Huang's Framework"
 date: 2026-03-18
-draft: false
+draft: true
 tags: ["AI", "investing", "token-economics", "NVIDIA", "valuation"]
 summary: "Jensen Huang declared tokens the new commodity at GTC 2026. Here's a framework for valuing AI companies based on token production capacity, quality, and market share."
 cover:

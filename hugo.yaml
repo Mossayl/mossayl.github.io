@@ -31,6 +31,10 @@ params:
 
 menu:
   main:
+    - identifier: eileen
+      name: Eileen
+      url: /eileen/
+      weight: 5
     - identifier: posts
       name: Posts
       url: /posts/

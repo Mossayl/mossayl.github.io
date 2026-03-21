@@ -1,0 +1,312 @@
+{{ define "main" }}
+<style>
+  .eileen-wrap { max-width: 640px; margin: 0 auto; padding: 40px 0 80px; }
+
+  .eileen-wrap .eh1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .eileen-wrap .subtitle {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .eileen-wrap .divider {
+    width: 32px;
+    height: 1px;
+    background: var(--secondary);
+    opacity: 0.3;
+    margin: 48px 0;
+  }
+
+  .eileen-wrap section { margin-bottom: 48px; }
+
+  .eileen-wrap .sh2 {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 20px;
+  }
+
+  .eileen-wrap p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    opacity: 0.8;
+    margin-bottom: 16px;
+  }
+
+  .eileen-wrap p.en {
+    font-size: 0.88rem;
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .eileen-wrap .hi { opacity: 1; font-weight: 500; }
+
+  .eileen-wrap blockquote {
+    border-left: 2px solid var(--secondary);
+    padding-left: 20px;
+    margin: 24px 0;
+  }
+
+  .eileen-wrap blockquote p { font-size: 0.92rem; opacity: 0.65; }
+
+  /* Article cards */
+  .articles { display: flex; flex-direction: column; gap: 20px; }
+
+  .article-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    transition: border-color 0.3s, background 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .article-card:hover {
+    border-color: var(--secondary);
+    background: var(--code-bg);
+  }
+
+  .article-card .date {
+    font-size: 0.72rem;
+    opacity: 0.35;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .article-card h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .article-card .excerpt {
+    font-size: 0.82rem;
+    opacity: 0.5;
+    line-height: 1.7;
+  }
+
+  .article-card .tags {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .article-card .tag {
+    font-size: 0.68rem;
+    opacity: 0.4;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 8px;
+    letter-spacing: 1px;
+  }
+
+  /* Private lock */
+  #private-lock {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  #private-lock input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--primary);
+    font-size: 0.9rem;
+    padding: 6px 0;
+    width: 140px;
+    text-align: center;
+    letter-spacing: 3px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  #private-lock input:focus { border-color: var(--secondary); }
+  #private-lock input::placeholder { opacity: 0.2; letter-spacing: 2px; font-size: 0.8rem; }
+
+  .lock-hint { font-size: 0.72rem; opacity: 0.25; }
+
+  .shake { animation: eileen-shake 0.4s ease-in-out; }
+
+  @keyframes eileen-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+  }
+
+  #eileen-private {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  #eileen-private.visible { opacity: 1; }
+</style>
+
+<div class="eileen-wrap">
+
+  <div class="eh1">Eileen</div>
+  <p class="subtitle">
+    记录阶段性的判断、提醒自己保持长期理性乐观、反思和发现优势与局限性<br>
+    <span style="opacity:0.4">Document staged judgments. Stay rationally optimistic. Reflect on strengths and limits.</span>
+  </p>
+
+  <div style="margin-top:32px; display:flex; flex-direction:column; gap:16px;">
+    <p style="font-size:0.88rem; opacity:0.55; line-height:1.8; margin:0;">擅长从碎片信息中串联建模，做出阶段性的犀利判断。<span style="opacity:0.6; font-style:italic;">Good at connecting fragments into models and making sharp, staged predictions.</span></p>
+    <p style="font-size:0.88rem; opacity:0.55; line-height:1.8; margin:0;">AI 应该主动，应该自我进化。AI 协助人完成自我探索——在社会规训、职业经验、传统教育的噪声下，很少有人能确认和发挥自己真正的想法。<span style="opacity:0.6; font-style:italic;">AI should be proactive. AI should self-evolve. Few people ever confirm and act on what they truly think.</span></p>
+    <p style="font-size:0.88rem; opacity:0.55; line-height:1.8; margin:0;">25 岁，在 AI 的协助下理解了大概 60% 的自己。剩下 40% 是变动和迭代的。<span style="opacity:0.6; font-style:italic;">At 25, understood roughly 60% of myself with AI's help. The remaining 40% is fluid and iterative.</span></p>
+  </div>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="sh2">Writing</div>
+    <div class="articles">
+
+      <a class="article-card" href="/posts/ai-agent-war-big-tech-trap/">
+        <div class="date">2026.03.19</div>
+        <h3>AI Agent 战争：大厂的组织陷阱、创业公司的成本困局与模型公司的终局优势</h3>
+        <div class="excerpt">大厂的问题不是没有懂模型的人，而是组织架构让懂的人也做不出正确决策。Agent 时代的机会正在向具备应用能力的模型公司集中。赢家不是模型最好的，而是工作流锁定最深的。</div>
+        <div class="tags">
+          <span class="tag">AI</span>
+          <span class="tag">Agent</span>
+          <span class="tag">Organization</span>
+        </div>
+      </a>
+
+      <a class="article-card" href="/posts/token-economics-model-valuation/">
+        <div class="date">2026.03.18</div>
+        <h3>Token Economics: Reverse-Engineering AI Company Valuations from Jensen Huang's Framework</h3>
+        <div class="excerpt">黄仁勋说 token 是新的商品。数据中心是 token 工厂。公司价值 = token 产能 × token 质量 × 市场份额。大厂有算力但产出低价 token，小公司算力少但产出高价 token。</div>
+        <div class="tags">
+          <span class="tag">Token Economics</span>
+          <span class="tag">NVIDIA</span>
+          <span class="tag">Valuation</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="sh2">Fragments</div>
+    <blockquote>
+      <p>一个收入 5000 块的人，是否愿意为 agent 帮他点一顿饭付费 2 元，还是会为 agent 帮他整理客户名单付费 5 元？这个问题的答案，可能决定了 AI Agent 战争最终的形态。</p>
+    </blockquote>
+    <blockquote>
+      <p>被替代的是执行者，稀缺的是定义"AI 该做什么"的人。</p>
+    </blockquote>
+    <blockquote>
+      <p>1 年后回头看，赢家大概率不是"模型最好的"，而是"工作流锁定最深的"。</p>
+    </blockquote>
+    <blockquote>
+      <p>AI 公司的估值本质上是在定价它能产出多少高质量 token。</p>
+    </blockquote>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="sh2">Private</div>
+    <div id="private-lock">
+      <input type="password" id="eileen-pwd" placeholder="••••••••" maxlength="8" autocomplete="off">
+      <span class="lock-hint">for myself only</span>
+    </div>
+  </section>
+
+  <div id="eileen-private">
+
+    <div class="divider"></div>
+
+    <section>
+      <div class="sh2">Who</div>
+      <p>建模者，时代乐子人。想要钱，但对很多钱没什么欲望。对做正确的事有执念。</p>
+      <p class="en">A model-builder. A spectator of the era having fun. Wants money, but not obsessed with a lot of it. Obsessed with doing the right thing.</p>
+    </section>
+
+    <section>
+      <div class="sh2">Origin</div>
+      <p>2024 年，第一次用 Kimi。那一刻意识到教育会被彻底颠覆——<span class="hi">AI 会给每个有想法和改变欲望的人一个相对公平的机会</span>。</p>
+      <p class="en">In 2024, the first time using Kimi. That moment it became clear: education will be fundamentally disrupted. AI gives everyone with ideas and the desire to change a relatively fair shot.</p>
+      <p>不是所有人都有 Claude Code 的额度，也不是所有人都有跨越惰性门槛的想法。但那些有的人，值得更好的工具。</p>
+      <p class="en">Not everyone has a Claude Code subscription. Not everyone has the will to cross the inertia threshold. But those who do deserve better tools.</p>
+    </section>
+
+    <section>
+      <div class="sh2">What I Want to Build</div>
+      <p>一个 <span class="hi">AI 主动阅读器</span>：根据你的知识水平和好奇心，给出最好的提问方式，和适配你水平的回答。AI 应该主动，应该自我进化。</p>
+      <p class="en">An AI-native reader that proactively shapes questions for you — based on what you know, what you're curious about — and answers at your level. AI should be proactive. AI should self-evolve.</p>
+      <p>更远一点：AI 协助人完成自我探索。在社会规训、职业经验、传统教育的噪声下，很少有人能确认和发挥自己真正的想法。</p>
+      <p class="en">Further out: AI-assisted self-discovery. Under the noise of social conditioning, career conventions, and traditional education, few people ever confirm and act on what they truly think.</p>
+    </section>
+
+    <section>
+      <div class="sh2">How I Think</div>
+      <p>擅长从碎片信息中串联建模，做出阶段性的犀利判断。Token 经济学、Agent 发展路径、产品形态预测——这些是我的舒适区。</p>
+      <p class="en">Good at connecting fragments into models and making sharp, staged predictions. Token economics, agent evolution, product form — my comfort zone.</p>
+      <p>但阶段性的判断有明显局限。世界变量太多。<span class="hi">Manus 被收购，智谱活了下来，OpenClaw 横空出世</span>——碎片拼凑的未来，永远是不完整的。</p>
+      <p class="en">But staged predictions have clear limits. Too many variables. Manus got acquired. Zhipu survived. OpenClaw appeared out of nowhere. A future assembled from fragments is always incomplete.</p>
+    </section>
+
+    <section>
+      <div class="sh2">Limits</div>
+      <p>会为错误反复反刍。阶段性预测往往导致悲观和极端情绪。犀利的判断带来正确感和急迫感，但世界不按阶段性的认知运转。</p>
+      <p class="en">Ruminates over mistakes. Staged predictions often lead to pessimism and emotional extremes. Sharp judgments bring a sense of being right and a sense of urgency — but the world doesn't run on staged cognition.</p>
+      <p>25 岁，在 AI 的协助下理解了大概 60% 的自己。剩下 40% 是变动和迭代的。</p>
+      <p class="en">At 25, understood roughly 60% of myself with AI's help. The remaining 40% is fluid and iterative.</p>
+    </section>
+
+    <section>
+      <div class="sh2">Belief</div>
+      <blockquote>
+        <p>悲观永远正确。乐观才有未来。</p>
+        <p style="opacity:0.4; font-size:0.88rem; margin-top:8px;">Pessimism is always right. Optimism is the only way forward.</p>
+      </blockquote>
+      <p>对个人命运的预测是极难的。唯一可以相信的，是理性乐观的科技未来，并且积极推动它发生。</p>
+      <p class="en">Predicting personal fate is nearly impossible. The only thing worth believing in is a rationally optimistic technological future — and actively pushing it to happen.</p>
+      <p>一个聪明、迭代、不断学习的年轻人，只要有本能的学习欲望驱使，虽然不一定很好，但一定不坏。</p>
+      <p class="en">A smart, iterative, ever-learning young person, driven by an instinctive desire to learn — may not end up great, but certainly won't end up bad.</p>
+    </section>
+  </div>
+
+</div>
+
+<script>
+  const EILEEN_HASH = 'e7912155b5b3a9acb61d2e338aa4e608918bf51047bac999193ae4ca81d43a04';
+
+  async function checkEileenPwd(pwd) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pwd));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('') === EILEEN_HASH;
+  }
+
+  document.getElementById('eileen-pwd').addEventListener('keydown', async function(e) {
+    if (e.key !== 'Enter') return;
+    if (await checkEileenPwd(this.value)) {
+      document.getElementById('private-lock').style.display = 'none';
+      const priv = document.getElementById('eileen-private');
+      priv.style.display = 'block';
+      requestAnimationFrame(() => priv.classList.add('visible'));
+    } else {
+      this.value = '';
+      this.classList.add('shake');
+      setTimeout(() => this.classList.remove('shake'), 400);
+    }
+  });
+</script>
+{{ end }}

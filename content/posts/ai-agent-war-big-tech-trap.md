@@ -1,7 +1,7 @@
 ---
 title: "AI Agent 战争：大厂的组织陷阱、创业公司的成本困局与模型公司的终局优势"
 date: 2026-03-19
-draft: false
+draft: true
 tags: ["AI", "agent", "organization", "startup", "business-model"]
 summary: "大厂的问题不是没有懂模型的人，而是组织架构让懂的人也做不出正确决策。应用层创业公司面临结构性成本劣势。Agent 时代的机会正在向具备应用能力的模型公司集中。"
 cover:
