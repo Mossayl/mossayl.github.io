@@ -1,7 +1,7 @@
 ---
 title: "谁能在中国做出 CoWork？从三个产品负责人的画像说起"
 date: 2026-03-21
-draft: true
+draft: false
 tags: ["AI", "agent", "cowork", "product", "talent"]
 summary: "Claude Code、Cowork、Codex 三个产品的负责人都不是传统 PM。从他们的背景推导：能做好通用工作流 Agent 产品的人，到底长什么样？"
 cover:
