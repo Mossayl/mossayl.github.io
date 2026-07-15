@@ -76,8 +76,10 @@ cover:
 Token 单价降了 1000 倍，但总支出暴涨。因为：
 - 便宜了 → 更多场景变得可行
 - 推理模型消耗 100x token（多步思考）
-- Agent 工作流 7×24 不停消耗
+- Agent 工作流 7×24 不停消耗，每个任务触发 **10-20 次** LLM 调用
 - 企业 AI 支出 2025 年达 $6440 亿，同比增长 76%
+
+**2026年实时价格基准（参考）**：Gemini Flash-Lite $0.25/$1.50 per MTok；Claude Haiku $1/$5，Sonnet $3/$15，Opus $5/$25。中国厂商最低打到西方价格的 1/6。但社区里另一面：开源 memory layer 节省 60-80% token；RTK 技术让 Claude Code 用量降 60%；Ollama 本地跑模型从 $250/月降到 $20/月。**单价在崩，但高水平工程师的 token 账单应该在涨**——这是 token 经济学最核心的悖论。
 
 ---
 
@@ -89,6 +91,8 @@ Token 单价降了 1000 倍，但总支出暴涨。因为：
 - Claude Code 单任务 33K token，Cursor 188K token（5.5 倍差距）
 - 工程师年 token 成本约 **$100K**
 - Token 已成为薪酬第四组件：工资 + 奖金 + 期权 + **token 预算**
+
+**黄仁勋 Token 预算强制令（2026年3月）**：年薪 $50 万的工程师，年 token 消耗应达到 $25 万——否则说明 AI 还没被真正用起来。Nvidia 自己目标是花 $20 亿买 token。Reddit 的反应是把这比作 "Colombian cartels claiming that if you don't spend at least 100K on coke each year, there is something wrong with you"（3161 upvotes）。这个梗背后是真实的焦虑：token 消耗量正在成为衡量一家公司 AI 化程度的硬指标。
 
 ### 2. Agentic AI（最大增量）
 
