@@ -1,0 +1,48 @@
+{
+  "slug": "who-can-build-cowork-in-china",
+  "title": "谁能在中国做出 CoWork？从三个产品负责人的画像说起",
+  "source_article": "/Users/wangye/workspace/blog/content/posts/who-can-build-cowork-in-china.md",
+  "article_markdown": "/Users/wangye/workspace/blog/publish/who-can-build-cowork-in-china/正文.md",
+  "image_dir": "/Users/wangye/workspace/blog/publish/who-can-build-cowork-in-china/正文配图",
+  "cover_image": "/Users/wangye/workspace/blog/publish/who-can-build-cowork-in-china/正文配图/claude-code-source-card.png",
+  "chapter_images": [
+    {
+      "section": "Claude Code 来源卡",
+      "image": "/Users/wangye/workspace/blog/publish/who-can-build-cowork-in-china/正文配图/claude-code-source-card.png",
+      "caption": "The Pragmatic Engineer + Claude Code source card"
+    },
+    {
+      "section": "Claude Code todo pill",
+      "image": "/Users/wangye/workspace/blog/publish/who-can-build-cowork-in-china/正文配图/pragmatic-engineer-claude-code-todo-pill.png",
+      "caption": "Claude Code terminal todo pill example"
+    },
+    {
+      "section": "Claude Code todo list",
+      "image": "/Users/wangye/workspace/blog/publish/who-can-build-cowork-in-china/正文配图/pragmatic-engineer-claude-code-todo-list.png",
+      "caption": "Claude Code terminal todo list example"
+    }
+  ],
+  "sources": "/Users/wangye/workspace/blog/publish/who-can-build-cowork-in-china/配图来源.md",
+  "platforms": {
+    "wechat": {
+      "status": "not_prepared",
+      "openwrite_markdown": null,
+      "draft_html": null,
+      "draft_media_id": null,
+      "draft_url": null
+    },
+    "xiaohongshu": {
+      "status": "prepared_manual",
+      "copy": "xiaohongshu.md",
+      "notes_count": 2,
+      "url": null
+    },
+    "twitter": {
+      "status": "not_prepared",
+      "copy": null,
+      "selected_image": null,
+      "tweet_id": null,
+      "url": null
+    }
+  }
+}

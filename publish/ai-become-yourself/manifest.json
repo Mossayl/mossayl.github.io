@@ -1,0 +1,52 @@
+{
+  "slug": "ai-become-yourself",
+  "title": "让 AI 成为你的分身：难的不是技术，是你对自己的了解",
+  "source_article": "/Users/wangye/workspace/blog/content/posts/ai-become-yourself.md",
+  "image_dir": "/Users/wangye/workspace/blog/static/images/posts/ai-become-yourself",
+  "cover_image": "/Users/wangye/workspace/blog/static/images/posts/ai-become-yourself/xhs-long-01-cover.png",
+  "chapter_images": [
+    {
+      "section": "长文封面",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-become-yourself/xhs-long-01-cover.png",
+      "caption": "让 AI 成为你的分身，难的不是技术"
+    },
+    {
+      "section": "三层解法",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-become-yourself/xhs-long-02-framework.png",
+      "caption": "大家都在做同一件事：让 AI 先认识你"
+    },
+    {
+      "section": "自我认知",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-become-yourself/xhs-long-03-questions.png",
+      "caption": "写 SOUL.md 前，先问自己 3 个问题"
+    },
+    {
+      "section": "核心判断",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-become-yourself/xhs-long-04-summary.png",
+      "caption": "真正的分身不是记忆，是模式识别"
+    }
+  ],
+  "platforms": {
+    "wechat": {
+      "status": "not_prepared",
+      "openwrite_markdown": null,
+      "draft_html": null,
+      "draft_media_id": null,
+      "draft_url": null
+    },
+    "xiaohongshu": {
+      "status": "prepared_manual_longform",
+      "copy": "xiaohongshu.md",
+      "notes_count": 1,
+      "url": null
+    },
+    "twitter": {
+      "status": "not_prepared",
+      "copy": null,
+      "selected_image": null,
+      "tweet_id": null,
+      "url": null
+    }
+  }
+}
+

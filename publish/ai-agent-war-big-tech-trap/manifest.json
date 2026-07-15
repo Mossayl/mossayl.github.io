@@ -1,0 +1,38 @@
+{
+  "slug": "ai-agent-war-big-tech-trap",
+  "title": "AI Agent 战争：大厂的组织陷阱、创业公司的成本困局与模型公司的终局优势",
+  "source_article": "/Users/wangye/workspace/blog/content/posts/ai-agent-war-big-tech-trap.md",
+  "article_markdown": "/Users/wangye/workspace/blog/publish/ai-agent-war-big-tech-trap/正文.md",
+  "image_dir": "/Users/wangye/workspace/blog/publish/ai-agent-war-big-tech-trap/正文配图",
+  "cover_image": "/Users/wangye/workspace/blog/publish/ai-agent-war-big-tech-trap/正文配图/agent-war-structure.png",
+  "chapter_images": [
+    {
+      "section": "结构对比图",
+      "image": "/Users/wangye/workspace/blog/publish/ai-agent-war-big-tech-trap/正文配图/agent-war-structure.png",
+      "caption": "AI Agent 战争三类玩家结构性差异"
+    }
+  ],
+  "sources": "/Users/wangye/workspace/blog/publish/ai-agent-war-big-tech-trap/配图来源.md",
+  "platforms": {
+    "wechat": {
+      "status": "not_prepared",
+      "openwrite_markdown": null,
+      "draft_html": null,
+      "draft_media_id": null,
+      "draft_url": null
+    },
+    "xiaohongshu": {
+      "status": "prepared_manual",
+      "copy": "xiaohongshu.md",
+      "notes_count": 2,
+      "url": null
+    },
+    "twitter": {
+      "status": "not_prepared",
+      "copy": null,
+      "selected_image": null,
+      "tweet_id": null,
+      "url": null
+    }
+  }
+}

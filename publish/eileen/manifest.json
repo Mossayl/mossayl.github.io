@@ -1,0 +1,42 @@
+{
+  "slug": "eileen",
+  "title": "Eileen",
+  "source_article": "/Users/wangye/workspace/blog/content/eileen.md",
+  "supporting_sources": [
+    "/Users/wangye/workspace/blog/content/eileen/index.html",
+    "/Users/wangye/workspace/blog/content/eileen/eileen_tweet/tweet-eileen-draft.md"
+  ],
+  "article_markdown": "/Users/wangye/workspace/blog/publish/eileen/正文.md",
+  "image_dir": "/Users/wangye/workspace/blog/publish/eileen/正文配图",
+  "cover_image": "/Users/wangye/workspace/blog/publish/eileen/正文配图/eileen-skill-architecture.png",
+  "chapter_images": [
+    {
+      "section": "Eileen 架构图",
+      "image": "/Users/wangye/workspace/blog/publish/eileen/正文配图/eileen-skill-architecture.png",
+      "caption": "Eileen 主动需求澄清 Agent 架构"
+    }
+  ],
+  "sources": "/Users/wangye/workspace/blog/publish/eileen/配图来源.md",
+  "platforms": {
+    "wechat": {
+      "status": "not_prepared",
+      "openwrite_markdown": null,
+      "draft_html": null,
+      "draft_media_id": null,
+      "draft_url": null
+    },
+    "xiaohongshu": {
+      "status": "prepared_needs_review",
+      "copy": "xiaohongshu.md",
+      "notes_count": 1,
+      "url": null
+    },
+    "twitter": {
+      "status": "existing_source_thread",
+      "copy": "/Users/wangye/workspace/blog/content/eileen/eileen_tweet/tweet-eileen-draft.md",
+      "selected_image": null,
+      "tweet_id": null,
+      "url": null
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "example-slug",
+  "title": "Example Title",
+  "source_article": "/Users/wangye/workspace/blog/content/posts/example-slug.md",
+  "image_dir": "/Users/wangye/workspace/blog/static/images/posts/example-slug",
+  "cover_image": "/Users/wangye/workspace/blog/static/images/posts/example-slug/cover.png",
+  "chapter_images": [
+    {
+      "section": "Section title",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/example-slug/fig-01.png",
+      "caption": "Short caption"
+    }
+  ],
+  "platforms": {
+    "wechat": {
+      "status": "prepared",
+      "openwrite_markdown": "wechat-openwrite.md",
+      "draft_html": "wechat-draft.html",
+      "draft_media_id": null,
+      "draft_url": null
+    },
+    "xiaohongshu": {
+      "status": "prepared_manual",
+      "copy": "xiaohongshu.md",
+      "url": null
+    },
+    "twitter": {
+      "status": "prepared",
+      "copy": "twitter.md",
+      "selected_image": "/Users/wangye/workspace/blog/static/images/posts/example-slug/cover.png",
+      "tweet_id": null,
+      "url": null
+    }
+  }
+}

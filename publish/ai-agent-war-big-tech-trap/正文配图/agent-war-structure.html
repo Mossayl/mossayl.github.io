@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Agent War Structure</title>
+<style>
+  body { margin: 0; background: #f8f8f5; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif; color: #111; }
+  .wrap { width: 1600px; height: 1000px; padding: 56px; box-sizing: border-box; background: #f8f8f5; }
+  h1 { margin: 0 0 8px; font-size: 44px; font-weight: 750; }
+  .sub { margin: 0 0 34px; font-size: 24px; color: #62615b; }
+  svg { width: 1488px; height: 820px; display: block; }
+  .h { font-size: 28px; font-weight: 760; fill: #111; }
+  .p { font-size: 20px; fill: #62615b; }
+  .tag { font-size: 15px; fill: #0f7c61; font-weight: 760; letter-spacing: .08em; }
+  .logo { font-size: 24px; font-weight: 760; fill: #111; }
+  .small { font-size: 17px; fill: #62615b; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AI Agent 战争：三类玩家的结构性差异</h1>
+  <p class="sub">不是谁更会做 App，而是谁能把模型、数据和工作流闭成一个飞轮。</p>
+
+  <svg viewBox="0 0 1488 820" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+        <circle cx="1" cy="1" r="0.9" fill="rgba(17,17,17,0.10)"/>
+      </pattern>
+      <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+        <polygon points="0 0, 10 4, 0 8" fill="#62615b"/>
+      </marker>
+      <marker id="arrow-accent" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+        <polygon points="0 0, 10 4, 0 8" fill="#0f7c61"/>
+      </marker>
+    </defs>
+    <rect width="1488" height="820" fill="#f8f8f5"/>
+    <rect width="1488" height="820" fill="url(#dots)" opacity="0.5"/>
+    <rect x="22" y="22" width="1444" height="776" fill="none" stroke="rgba(17,17,17,0.14)" stroke-width="2"/>
+
+    <!-- Columns -->
+    <rect x="70" y="86" width="384" height="486" rx="8" fill="#fff" stroke="rgba(17,17,17,0.55)" stroke-width="2"/>
+    <rect x="552" y="86" width="384" height="486" rx="8" fill="rgba(15,124,97,0.08)" stroke="#0f7c61" stroke-width="3"/>
+    <rect x="1034" y="86" width="384" height="486" rx="8" fill="#fff" stroke="rgba(17,17,17,0.55)" stroke-width="2"/>
+
+    <text x="262" y="136" text-anchor="middle" class="tag">BIG TECH</text>
+    <text x="262" y="188" text-anchor="middle" class="h">传统大厂</text>
+    <text x="262" y="232" text-anchor="middle" class="p">产品 / 数据 / 模型分线</text>
+    <text x="262" y="282" text-anchor="middle" class="logo">腾讯 · 字节 · 阿里</text>
+    <text x="262" y="334" text-anchor="middle" class="small">优势：流量、生态、算力</text>
+    <text x="262" y="372" text-anchor="middle" class="small">问题：决策被组织摩擦稀释</text>
+    <text x="262" y="410" text-anchor="middle" class="small">旧逻辑：分发 → 留存 → 广告</text>
+
+    <text x="744" y="136" text-anchor="middle" class="tag">MODEL + APP</text>
+    <text x="744" y="188" text-anchor="middle" class="h">模型公司</text>
+    <text x="744" y="232" text-anchor="middle" class="p">模型、数据、工作流同飞轮</text>
+    <text x="744" y="282" text-anchor="middle" class="logo">OpenAI · Anthropic · Kimi</text>
+    <text x="744" y="334" text-anchor="middle" class="small">优势：端到端优化 token 质量</text>
+    <text x="744" y="372" text-anchor="middle" class="small">优势：直接用业务数据做 eval / RL</text>
+    <text x="744" y="410" text-anchor="middle" class="small">新逻辑：工作流 → 数据 → 模型改进</text>
+
+    <text x="1226" y="136" text-anchor="middle" class="tag">APP LAYER</text>
+    <text x="1226" y="188" text-anchor="middle" class="h">应用创业公司</text>
+    <text x="1226" y="232" text-anchor="middle" class="p">产品层可以很厚，但成本更重</text>
+    <text x="1226" y="282" text-anchor="middle" class="logo">Cursor · Perplexity · Manus</text>
+    <text x="1226" y="334" text-anchor="middle" class="small">优势：速度、垂直场景、体验</text>
+    <text x="1226" y="372" text-anchor="middle" class="small">问题：额外支付模型 API 成本</text>
+    <text x="1226" y="410" text-anchor="middle" class="small">突围：足够深的工作流锁定</text>
+
+    <!-- Center flywheel -->
+    <circle cx="744" cy="512" r="46" fill="#0f7c61"/>
+    <text x="744" y="522" text-anchor="middle" font-size="22" font-weight="800" fill="#f8f8f5">飞轮</text>
+    <path d="M650 500 C650 438, 838 438, 838 500" stroke="#0f7c61" stroke-width="5" fill="none" marker-end="url(#arrow-accent)"/>
+    <path d="M838 524 C838 586, 650 586, 650 524" stroke="#0f7c61" stroke-width="5" fill="none" marker-end="url(#arrow-accent)"/>
+
+    <!-- Comparison arrows -->
+    <path d="M454 330 L552 330" stroke="#62615b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+    <path d="M936 330 L1034 330" stroke="#62615b" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+    <rect x="124" y="646" width="1240" height="88" rx="8" fill="#fff" stroke="#0f7c61" stroke-width="2.5"/>
+    <text x="744" y="694" text-anchor="middle" font-size="30" font-weight="800" fill="#111">核心判断：赢家未必是模型最强，而是工作流锁定最深。</text>
+    <text x="744" y="724" text-anchor="middle" font-size="20" fill="#62615b">Agent 产品的护城河来自数据飞轮和用户工作习惯，而不是单次回答质量。</text>
+  </svg>
+</div>
+</body>
+</html>
+

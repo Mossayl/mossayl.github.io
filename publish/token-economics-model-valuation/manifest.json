@@ -1,0 +1,41 @@
+{
+  "slug": "token-economics-model-valuation",
+  "title": "Token Economics: Reverse-Engineering AI Company Valuations from Jensen Huang's Framework",
+  "source_article": "/Users/wangye/workspace/blog/content/posts/token-economics-model-valuation.md",
+  "image_dir": "/Users/wangye/workspace/blog/static/images/posts/token-economics-model-valuation",
+  "cover_image": "/Users/wangye/workspace/blog/static/images/posts/token-economics-model-valuation/xhs-note-01-cover.png",
+  "chapter_images": [
+    {
+      "section": "小红书笔记 1",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/token-economics-model-valuation/xhs-note-01-cover.png",
+      "caption": "AI 公司估值，本质是在定价 token"
+    },
+    {
+      "section": "小红书笔记 2",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/token-economics-model-valuation/xhs-note-02-cover.png",
+      "caption": "工资、奖金、期权，还有 token 预算"
+    }
+  ],
+  "platforms": {
+    "wechat": {
+      "status": "not_prepared",
+      "openwrite_markdown": null,
+      "draft_html": null,
+      "draft_media_id": null,
+      "draft_url": null
+    },
+    "xiaohongshu": {
+      "status": "prepared_manual",
+      "copy": "xiaohongshu.md",
+      "notes_count": 2,
+      "url": null
+    },
+    "twitter": {
+      "status": "not_prepared",
+      "copy": null,
+      "selected_image": null,
+      "tweet_id": null,
+      "url": null
+    }
+  }
+}

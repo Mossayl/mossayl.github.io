@@ -1,0 +1,52 @@
+{
+  "slug": "ai-persona-lens-v2",
+  "title": "让 AI 成为另一个自己：人格透镜",
+  "source_article": "/Users/wangye/workspace/blog/content/posts/ai-persona-lens-v2.md",
+  "image_dir": "/Users/wangye/workspace/blog/static/images/posts/ai-persona-lens-v2",
+  "cover_image": "/Users/wangye/workspace/blog/static/images/posts/ai-persona-lens-v2/xhs-long-01-cover.png",
+  "chapter_images": [
+    {
+      "section": "长文封面",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-persona-lens-v2/xhs-long-01-cover.png",
+      "caption": "让 AI 成为另一个自己：人格透镜"
+    },
+    {
+      "section": "问题",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-persona-lens-v2/xhs-long-02-problem.png",
+      "caption": "人格测试为什么没用，因为描述不产生体验"
+    },
+    {
+      "section": "人格透镜",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-persona-lens-v2/xhs-long-03-lenses.png",
+      "caption": "每种人格是一套信息处理优先级"
+    },
+    {
+      "section": "核心判断",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-persona-lens-v2/xhs-long-04-summary.png",
+      "caption": "不是逃离自己，是用绕路的方式更深地回到自己"
+    }
+  ],
+  "platforms": {
+    "wechat": {
+      "status": "not_prepared",
+      "openwrite_markdown": null,
+      "draft_html": null,
+      "draft_media_id": null,
+      "draft_url": null
+    },
+    "xiaohongshu": {
+      "status": "prepared_manual_longform",
+      "copy": "xiaohongshu.md",
+      "notes_count": 1,
+      "url": null
+    },
+    "twitter": {
+      "status": "not_prepared",
+      "copy": null,
+      "selected_image": null,
+      "tweet_id": null,
+      "url": null
+    }
+  }
+}
+

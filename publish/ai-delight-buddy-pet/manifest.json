@@ -1,0 +1,52 @@
+{
+  "slug": "ai-delight-buddy-pet",
+  "title": "源代码泄漏：大家先玩一只宠物，好玩是AI产品的必选项",
+  "source_article": "/Users/wangye/workspace/blog/content/posts/ai-delight-buddy-pet.md",
+  "image_dir": "/Users/wangye/workspace/blog/static/images/posts/ai-delight-buddy-pet",
+  "cover_image": "/Users/wangye/workspace/blog/static/images/posts/ai-delight-buddy-pet/xhs-long-01-cover.png",
+  "chapter_images": [
+    {
+      "section": "长文封面",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-delight-buddy-pet/xhs-long-01-cover.png",
+      "caption": "源代码泄漏后，大家先玩一只宠物"
+    },
+    {
+      "section": "Buddy 系统",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-delight-buddy-pet/xhs-long-02-buddy.png",
+      "caption": "不是彩蛋，是认真的产品工程"
+    },
+    {
+      "section": "情感化设计",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-delight-buddy-pet/xhs-long-03-delight.png",
+      "caption": "为什么好玩会赢，因为它击中三层感受"
+    },
+    {
+      "section": "产品建议",
+      "image": "/Users/wangye/workspace/blog/static/images/posts/ai-delight-buddy-pet/xhs-long-04-summary.png",
+      "caption": "用户记住的不是你的功能，是你给他们的感受"
+    }
+  ],
+  "platforms": {
+    "wechat": {
+      "status": "not_prepared",
+      "openwrite_markdown": null,
+      "draft_html": null,
+      "draft_media_id": null,
+      "draft_url": null
+    },
+    "xiaohongshu": {
+      "status": "prepared_manual_longform",
+      "copy": "xiaohongshu.md",
+      "notes_count": 1,
+      "url": null
+    },
+    "twitter": {
+      "status": "not_prepared",
+      "copy": null,
+      "selected_image": null,
+      "tweet_id": null,
+      "url": null
+    }
+  }
+}
+
