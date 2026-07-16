@@ -1,14 +1,25 @@
 baseURL: https://mossayl.github.io/
-title: Mossayl's Blog
+title: 叶玲（Mossayl）· AI 产品与 Agent
 theme: PaperMod
-paginate: 10
 
-defaultContentLanguage: en
+defaultContentLanguage: zh
+hasCJKLanguage: true
+
+pagination:
+  pagerSize: 10
+
+languages:
+  zh:
+    locale: zh-CN
+    label: 中文
+    weight: 1
 
 params:
   env: production
-  author: Mossayl
-  description: "AI, Technology, and Investing"
+  author: 叶玲（Mossayl）
+  description: "AI 产品、Agent 系统、模型评测与个人研究"
+  label:
+    text: Mossayl
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
@@ -20,8 +31,8 @@ params:
   disableThemeToggle: false
 
   homeInfoParams:
-    Title: "Hi, I'm Mossayl"
-    Content: "Writing about AI, token economics, and building the future."
+    Title: "Hi，我是叶玲（Mossayl）"
+    Content: "AI 产品经理，也是 Agent workflow builder。这里集中展示我的工作经历、个人 Agent 项目和长期写作。"
 
   socialIcons:
     - name: github
@@ -31,20 +42,24 @@ params:
 
 menu:
   main:
-    - identifier: eileen
-      name: Eileen
-      url: /eileen/
+    - identifier: experience
+      name: 经历
+      url: /experience/
       weight: 5
-    - identifier: posts
-      name: Posts
-      url: /posts/
+    - identifier: projects
+      name: 项目
+      url: /projects/
       weight: 10
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 15
     - identifier: tags
-      name: Tags
+      name: 标签
       url: /tags/
       weight: 20
     - identifier: archives
-      name: Archives
+      name: 归档
       url: /archives/
       weight: 30
 
