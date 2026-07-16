@@ -8,11 +8,10 @@
 - `content/projects/`：可公开展示的个人项目页。
 - `content/experience.md`：公开工作经历。
 - `content/eileen.md`：Eileen 专题页。
-- `thinking/`：尚未进入正式写作流程的思考材料。
 - `publish/`：微信公众号、小红书、Twitter 等平台发布包。
 - `static/images/`：正式文章复用的图片资产。
 
-研究笔记、原型代码和项目证据保留在 `/Users/wangye/workspace/lab/`；只有适合公开展示的内容才进入本仓库。
+未完成但确定会发布的文章，直接放在 `content/posts/` 并设置 `draft: true`。研究笔记、早期长稿、原型代码和项目证据保留在 `/Users/wangye/workspace/lab/`；只有适合公开展示的内容才进入本仓库。
 
 ## 本地运行
 

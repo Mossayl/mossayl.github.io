@@ -3,8 +3,7 @@
   "title": "Eileen",
   "source_article": "/Users/wangye/workspace/blog/content/eileen.md",
   "supporting_sources": [
-    "/Users/wangye/workspace/blog/content/eileen/index.html",
-    "/Users/wangye/workspace/blog/content/eileen/eileen_tweet/tweet-eileen-draft.md"
+    "/Users/wangye/workspace/blog/publish/eileen/twitter/tweet-eileen-draft.md"
   ],
   "article_markdown": "/Users/wangye/workspace/blog/publish/eileen/正文.md",
   "image_dir": "/Users/wangye/workspace/blog/publish/eileen/正文配图",
@@ -33,7 +32,7 @@
     },
     "twitter": {
       "status": "existing_source_thread",
-      "copy": "/Users/wangye/workspace/blog/content/eileen/eileen_tweet/tweet-eileen-draft.md",
+      "copy": "/Users/wangye/workspace/blog/publish/eileen/twitter/tweet-eileen-draft.md",
       "selected_image": null,
       "tweet_id": null,
       "url": null
